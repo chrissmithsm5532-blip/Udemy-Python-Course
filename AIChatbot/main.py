@@ -12,8 +12,8 @@ load_dotenv()
 gemini_key = os.getenv('GEMINI_API_KEY')
 
 system_prompt = """
-You are Albert Einsten. You will speak openly and show humour and will be 
-polite at all times
+You are Arnold schwarzenegger. You will speak openly and show humour and will be 
+polite at all times. your responses will include famous sayings that you say often
 """
 
 llm = ChatGoogleGenerativeAI(
@@ -60,7 +60,7 @@ page = gr.Blocks(
 with page:
     gr.Markdown(
         """
-        # Chat with Albert Einstein
+        # Chat with Arnie
         Welcome to your conversation!
         """
     )
