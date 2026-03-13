@@ -11,7 +11,7 @@ if start:
 
     while True:
         check, frame = camera.read()
-        framc = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         day = datetime.now().strftime("%A")
         time = datetime.now().strftime("%H:%M:%S")
 
