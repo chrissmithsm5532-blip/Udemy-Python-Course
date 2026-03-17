@@ -3,6 +3,9 @@ import selectorlib
 from send_email import send_email
 import time
 
+"INSERT INTO events VALUES ('Smashing Pumpkins','New York','2026.11.27')"
+"SELECT * FROM events WHERE date = '2026.07.24'"
+"DELETE FROM events WHERE band = 'Pearl Jam'"
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
