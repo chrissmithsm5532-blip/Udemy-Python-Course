@@ -1,5 +1,5 @@
 import pandas as pd
-import fpdf as FPDF
+from fpdf import FPDF
 
 df = pd.read_csv('articles.csv',dtype={"id": str})
 
@@ -10,7 +10,7 @@ class Article:
         self.price = df.loc[df['id'] == self.id,'price'].squeeze()
 
     def available(self):
-        in_stock =  df.loc[df['id'] == self.id,'in_stock'].squeeze()
+        in_stock = df.loc[df['id'] == self.id, 'in stock'].sq
         print(in_stock)
         return in_stock
 
@@ -21,24 +21,21 @@ class Receipt:
     def generate(self):
         pdf = FPDF(orientation="P", unit="mm", format="A4")
         pdf.add_page()
-
         pdf.set_font(family="Times", size=16, style="B")
         pdf.cell(w=50, h=8, txt=f"Receipt nr.1", ln=1)
-
         pdf.set_font(family="Times", size=16, style="B")
         pdf.cell(w=50, h=8, txt=f"Article: Laptop Sven", ln=1)
 
         pdf.set_font(family="Times", size=16, style="B")
         pdf.cell(w=50, h=8, txt=f"Price: 999", ln=1)
-
         pdf.output("receipt.pdf")
 
 
 print(df)
-userinput = input ("Enter ID to purchase: ")
+userinput = input ("Enter I34D to purchase: ")
 article = Article(article_id=userinput)
 if article.available():
-    receipt = Receipt(article=article)
+    receipt = Receipt(article)
     receipt.generate()
 else:
     print("article not available")
